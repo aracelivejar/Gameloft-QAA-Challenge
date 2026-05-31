@@ -1,141 +1,186 @@
-# Test Case 1
+# Test Scenario 1
 
 ## UI - Search Quality Test
 
-### Business Question
+### Test Question:
 
 If a user searches for a game, can they find it?
 
-### Manual Test
+### Test Objective:
+Validate that the search functionality returns relevant results for a valid game title.
 
-#### Positive Scenario
+### Test actions:
+* Open https://play.ludigames.com
+* Open the Search page
+* Enter "Merge Dragons" in the search field
+* Submit the search
 
-**Search**
+ ### Expected Results
+* Search results are displayed
+* "Merge Dragons" appears in the results
+* The game page can be opened from the search results
 
-* Merge Dragons
+#### Manual Test
 
-**Verify**
+#### Test Positive Scenario:
+
+* Open https://play.ludigames.com
+* Open the Search page
+* Enter "Merge Dragons" in the search field
+* Submit the search
+  
+**Expected Result**
+
+The search returns relevant results and allows access to the game.
+
+**Test Observations**
 
 * Results appear
 * Merge Dragons is displayed
 * User can open the game page
 
-**Expected Result**
+#### Test Negative Scenario
 
-The search returns relevant results and allows access to the game.
-
-
-
-#### Negative Scenario
-
-**Search**
-
-* zzzzzzzzzzzzzzzz
-* xxxxxxxxxxxxxxx
-* ccccccccccccc
-
-**Verify**
-
-* Results appear
-* Message displayed:
-
-  * "We don't have that title yet. You can try our Top 10 games!"
-* User can open the game page
+* Open https://play.ludigames.com
+* Open the Search page
+* Enter "zzzzzzzzzzzzzzzz" in the search field
+* Submit the search
+* Enter "xxxxxxxxxxxxxxx" in the search field
+* Submit the search
+* Enter "ccccccccccccc" in the search field
+* Submit the search
 
 **Expected Result**
 
 The system informs the user that no matching title exists and suggests alternative games.
 
+**Test Observations**
+
+* Message displayed:
+   "We don't have that title yet. You can try our Top 10 games!"
+* User can choose one of 10 suggested games
 
 
-# Test Case 2
+# Test Scenario 2
 
 ## UI - Category Health Check
 
-### Business Question
+### Test Question
 
 Can users browse categories successfully?
 
+### Test Objective:
+Validate that all game categories load successfully and contain playable game content.
+
+### Test Actions:
+* Open https://play.ludigames.com
+* Open the following categories:
+   *  Action Games
+   * Sport Games
+   * Family Games
+   * Casual Games
+   * Racing Games
+   * Adventure Games
+   * Simulation Games
+   * Strategy Games
+   * Logic Games
+   * Boardgames
+   *  All Games
+      
+ ### Expected Results
+* Category page loads successfully
+* Games are displayed
+* Category contains playable game content
+
+
 ### Manual Test
 
-#### Positive Scenario
+#### Test Positive Scenario
 
 **Open**
 
-* Action Games
-* Sport Games
-* Family Games
-* Casual Games
-* Racing Games
-* Adventure Games
-* Simulation Games
-* Strategy Games
-* Logic Games
-* Boardgames
-* All Games
+   *  Action Games
+   * Sport Games
+   * Family Games
+   * Casual Games
+   * Racing Games
+   * Adventure Games
+   * Simulation Games
+   * Strategy Games
+   * Logic Games
+   * Boardgames
+   *  All Games
 
-**Verify**
+### Expected Result
 
 * Category page loads successfully
 * Games are displayed
+*  User can browse available games
 
-**Expected Result**
+### Test Observations
 
-Every category contains playable games.
+* Category page loads successfully
+* Games are displayed
+* User can browse available games
 
 
-
-#### Negative Scenario
+#### Test Negative Scenario
 
 **Open**
 
-* Action Games
-* Sport Games
-* Family Games
-* Casual Games
-* Racing Games
-* Adventure Games
-* Simulation Games
-* Strategy Games
-* Logic Games
-* Boardgames
-* All Games
+   *  Action Games
+   * Sport Games
+   * Family Games
+   * Casual Games
+   * Racing Games
+   * Adventure Games
+   * Simulation Games
+   * Strategy Games
+   * Logic Games
+   * Boardgames
+   *  All Games
 
-**Verify**
+### Expected Result
+
+* Every category contains playable games.
+* Users always see game content.
+
+### Test Observations
 
 * Category is not empty
 * No blank category page exists
-
-**Expected Result**
-
-Users always see game content.
+* Games are displayed in every category
 
 
-# Test Case 3
+# Test Scenario 3
 
 ## UI - Game Launch Consistency
 
-### Business Question
+### Test Question
 
 Can users actually start games?
 
-### Positive Scenario
+### Test Objective:
 
-**Open games from:**
+Validate that users can successfully launch games from every category and access playable content
 
-* Action Games
-* Sport Games
-* Family Games
-* Casual Games
-* Racing Games
-* Adventure Games
-* Simulation Games
-* Strategy Games
-* Logic Games
-* Boardgames
-* All Games
-
-**Verify**
+### Test Actions:
+* Open https://play.ludigames.com
+* Open the following categories:
+   *  Action Games
+   * Sport Games
+   * Family Games
+   * Casual Games
+   * Racing Games
+   * Adventure Games
+   * Simulation Games
+   * Strategy Games
+   * Logic Games
+   * Boardgames
+   *  All Games
+* Open a game from each category
+  
+### Expected Result
 
 * Category page loads
 * At least one game is available
@@ -144,41 +189,76 @@ Can users actually start games?
 * Game container loads
 
 **Expected Result**
+* Users can always access playable game content after selecting a game.
 
-Every category contains at least one game that launches successfully.
+### Test Observations
+* No blank game page is displayed
+* No error page is displayed
+* Game container is available
+* Game launches successfully
 
-
-# Test Case 4
+# Test Scenario 4
 
 ## UI - Duplicate Game Detection
 
-### Business Question
+### Test Question
 
-Are categories showing unique content?
+Are games correctly categorized?
 
-### What We Verify
+### Test Objective:
 
-For every category:
+Validate that games are not unexpectedly duplicated across different categories.
+
+### Test Actions:
+
+* Open https://play.ludigames.com
+* Open Action Games
+* Collect visible game titles
+* Open Racing Games
+* Collect visible game titles
+* Compare game titles between categories
+
+### Expected Results
+
+* Categories contain game titles
+* Duplicate games can be identified
+* Categories provide distinct game collections
+
+### Manual Test
+
+#### Test Positive Scenario
+
+**Open**
 
 * Action Games
-* Sport Games
-* Family Games
-* Casual Games
 * Racing Games
-* Adventure Games
-* Simulation Games
-* Strategy Games
-* Logic Games
-* Boardgames
-* All Games
 
-### We Will
+### Expected Result
 
-* Open the category
-* Count game cards
-* Save the category URL
-* Verify categories are different
+Each category contains games relevant to that category and distinct game collections.
 
-**Expected Result**
+### Test Observations
 
-Users are not always seeing the same category page.
+* Categories display game titles
+* Categories contain distinct game collections
+* Most games are unique to their category
+* Games are relevant to their respective category
+
+#### Test Negative Scenario
+
+**Open**
+
+* Action Games
+* Racing Games
+
+### Expected Result
+
+No unexpected duplicate games appear across categories.
+
+### Test Observations
+
+* The same game appears in multiple categories
+* Duplicate games are detected
+* Categories may not be properly differentiated
+* Games may not be correctly categorized
+
