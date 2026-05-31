@@ -262,3 +262,65 @@ No unexpected duplicate games appear across categories.
 * Categories may not be properly differentiated
 * Games may not be correctly categorized
 
+# Test Scenario 5
+
+## API - Homepage Response Time
+
+### Test Question
+
+Does the homepage respond successfully and within an acceptable time?
+
+### Test Objective:
+
+Validate that the homepage is available, returns a successful response, and responds within the expected performance threshold.
+
+### Test Actions:
+
+* Send a GET request to https://play.ludigames.com
+* Measure the response time
+* Capture the HTTP status code
+
+### Expected Results
+
+* Homepage returns HTTP 200
+* Homepage is available
+* Response time is below 3 seconds
+* Users can access the homepage without noticeable delays
+
+### Manual Test
+
+#### Test Positive Scenario
+
+**Open**
+
+* https://play.ludigames.com
+
+### Expected Result
+
+The homepage loads successfully and responds within 3 seconds.
+
+### Test Observations
+
+* Homepage is reachable
+* HTTP status code is 200
+* Response time is below 3 seconds
+* Users can access the homepage successfully
+
+#### Test Negative Scenario
+
+**Open**
+
+* https://play.ludigames.com
+
+### Expected Result
+
+The homepage should not return server errors or exceed the expected response time threshold.
+
+### Test Observations
+
+* HTTP status code is not 200
+* Homepage is unavailable
+* Response time exceeds 3 seconds
+* Users may experience delays or be unable to access the homepage
+
+
